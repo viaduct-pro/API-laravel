@@ -43,12 +43,6 @@ class UserController extends Controller
     {
         $interests = $request->get('interests');
 
-//        $userInterests = auth()->user()->interests->map(function ($userInterest) {
-//            return $userInterest->slug;
-//        })->toArray();
-
-//        dd($userInterests);
-
         auth()->user()->revokeInterests();
 
         if (is_array($interests)) {
